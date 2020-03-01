@@ -11,8 +11,8 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="{{asset('assets/js/main-home.js')}}" defer></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{asset('assets/js/main-home.js')}}" defer></script> --}}
 
     <title>@yield('title')</title>
 </head>
@@ -32,6 +32,33 @@
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="annyang.min.js"></script>
+<script>
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'hewan': function() {
+        window.location = "http://127.0.0.1:8000/hewan";
+    },
+    'buah': function() {
+        window.location = "http://127.0.0.1:8000/buah";
+    },
+    'profesi': function() {
+        window.location = "http://127.0.0.1:8000/profesi";
+    },
+    'kendaraan': function() {
+        window.location = "http://127.0.0.1:8000/kendaraan";
+    }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+</script>
 
 <script type="text/javascript" src="{{asset('assets/js/jquery-3.4.1.min.js')}}"></script>
 <!-- Bootstrap tooltips -->
